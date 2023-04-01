@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Main Form</title>
+</head>
+<body bgcolor="pink">
+	<form th:action="@{/taxi/update}" th:object="${ridedetails}" method="post">
+<div>
+</div>
+<div><h3><center>To reserve the ride, please complete and submit the booking form.</center></h3></div>
+
+<div style="display: flex; padding-bottom: 18px;max-width : 450px;">
+<div style="width: 49%;">Id<br>
+  <input type="number" th:field="*{id}" readonly/>
+</div>  
+
+<div style="display: flex; padding-bottom: 18px;max-width : 450px;">
+<div style="width: 49%;">First Name<br>
+  <input type="text" th:field="*{firstname}"/>
+</div>  
+<div style="width: 49%;">Last Name<br>
+  <input type="text" th:field="*{lastname}"/>
+</div>      
+</div>
+
+<div style="padding-bottom: 18px;">Phone No<br>
+	<input type="tel" th:field="*{phone}"/>
+</div>
+
+<div style="padding-bottom: 18px;">Email<br>
+	<input type="email" th:field="*{email}"/>
+</div>
+
+<div style="padding-bottom: 18px;">Ride For<br>
+     <select th:field="*{ride}">
+		 <option value="">------Select-----</option>
+		 <option value="Self">Self</option>
+		 <option value="Others">Others</option>
+	 </select>
+</div>
+
+<div style="padding-bottom: 18px;">Pickup Location<br>
+	<input type="text" th:field="*{location}"/>
+</div>
+
+<div style="padding-bottom: 18px;">Pickup Date<br>
+	<input type="date" th:field="*{date}"/>
+</div>
+
+<div style="padding-bottom: 18px;">Pickup Time<br>
+	<input type="time" th:field="*{time}"/>
+</div>
+
+<div style="padding-bottom: 18px;">No Of Members<br>
+	<input type="number" th:field="*{members}"/>
+</div>
+
+<div style="padding-bottom: 18px;">Payment Mode<br>
+     <select th:field="*{payment}">
+		 <option value="">------Select-----</option>
+		 <option value="Gpay">Gpay</option>
+		 <option value="Phonepe">Phonepe</option>
+		 <option value="Paytm">Paytm</option>
+		 <option value="Upi">Upi</option>
+		 <option value="Gpay">Cash</option>
+	 </select>
+</div>
+
+<div style="padding-bottom: 18px;">Queries<br>
+	<textarea th:field="*{query}" rows="6"></textarea>
+</div>
+
+<div style="display: flex; padding-bottom: 18px;max-width : 450px;">
+<div></div>
+  <input type="submit" value="Modify Details"/> 
+</div>  
+</div>
+</form>
+</body>
+</html>

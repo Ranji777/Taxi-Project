@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Thank You!..</title>
+</head>
+<body bgcolor="pink">
+       <center>
+		   <form th:object="${ridedetails}">
+			   <div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 500px;">
+          <h1>Thank You For Booking</h1>
+          </div>
+                    
+        <span th:text="${message}"></span><br><br>
+          <a th:href="@{/taxi/welcome}">Click here go to the Booking page</a><br><br>
+          <a th:href="@{/taxi/all}">Click here go to for Your Booking Details</a>
+       </center>
+       <form>
+</body>
+</html>

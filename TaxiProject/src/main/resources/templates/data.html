@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Main Form</title>
+	  <style>
+   table{
+        width: 1100px;
+        border-collapse: collapse;
+       }
+   table,th,td{
+             border: 1px solid red;
+          }
+   th,td{
+          padding: 10px  
+        }
+        </style>
+</head>
+<body bgcolor="pink">
+<center>
+          <table border="1">
+			  <tr>
+				  <th>ID</th>
+				  <th>FIRST NAME</th>
+				  <th>LAST NAME</th>
+				  <th>PHONE NO</th>
+				  <th>EMAIL</th>
+				  <th>LOCATION</th>
+				  <th>DATE</th>
+				  <th>TIME</th>
+				  <th>PAYMENT</th>
+				  <th>MEMBERS</th>
+			  </tr>
+			  <tr th:each="ob:${list}">
+				  <td th:text="${ob.id}"></td>
+				  <td th:text="${ob.firstname}"></td>
+				  <td th:text="${ob.lastname}"></td>
+				  <td th:text="${ob.phone}"></td>
+				  <td th:text="${ob.email}"></td>
+				  <td th:text="${ob.location}"></td>
+				  <td th:text="${ob.date}"></td>
+				  <td th:text="${ob.time}"></td>
+				  <td th:text="${ob.payment}"></td>
+				  <td th:text="${ob.members}"></td>
+				  
+				  <td>
+					<a th:href="@{/taxi/edit(id=${ob.id})}">Edit</a>  
+				    <a th:href="@{/taxi/delete(id=${ob.id})}">Delete</a>
+				  </td>
+			  </tr>
+			  
+		  </table>
+          <a th:href="@{/taxi/welcome}">Click here go to the Booking page</a>
+       </center>
+</body>
+</html>
